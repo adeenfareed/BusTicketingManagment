@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Bus Ticketing System</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+
+</head>
+<body>
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                <button class="logout-confirm-btn" id="confirmLogoutBtn">Log Out</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatically show the modal when the page loads
+        window.onload = function () {
+            document.getElementById("logoutModal").style.display = "flex";
+        };
+
+        // Get modal elements
+        const logoutModal = document.getElementById("logoutModal");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const confirmLogoutBtn = document.getElementById("confirmLogoutBtn");
+
+        // Close the modal when 'Cancel' is clicked
+        cancelBtn.addEventListener("click", function () {
+            logoutModal.style.display = "none";
+        });
+
+        // Log out the user when 'Log Out' is confirmed
+        confirmLogoutBtn.addEventListener("click", function () {
+            window.location.href = "login.html";  // Redirect to login page or home page
+        });
+
+        // Close the modal if clicked outside the modal content
+        window.addEventListener("click", function (event) {
+            if (event.target === logoutModal) {
+                logoutModal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

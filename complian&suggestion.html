@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain & suggestions - Bus Ticketing System</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+
+</head>
+<body>
+    
+    <div class="complain-container">
+        <h1>Complaint & Suggestion</h1>
+        <p>We value your feedback. Please share your complaints or suggestions to help us improve our services.</p>
+        <form action="submit_complaint.html" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="type">Type</label>
+            <select id="type" name="type" required>
+                <option value="complaint">Complaint</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Describe your issue or suggestion" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="footer">
+            &copy; 2025 Bus Ticketing System. <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+</body>
+</html>

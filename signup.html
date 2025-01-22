@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticketing System - Sign Up</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="detail-section">
+            <h1>Come and join us!</h1>
+            <p>
+                Hit the road with ease! Sign up with us and discover a hassle-free way to book bus tickets. Get exclusive discounts, track your journey, and enjoy a seamless travel experience. Create your account now and start exploring!
+            </p>
+            <div class="background-image"></div>
+        </div>
+        <div class="form-section">
+            <h2>Create an Account</h2>
+            <form id="signupForm">
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your user name" required>
+
+                <label for="password">Password (At least 8 characters):</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required minlength="8">
+
+                <!-- Error message for confirm password -->
+                <div id="error-message" style="color: red; display: none;">Passwords do not match!</div>
+
+                <button type="submit">NEXT</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from its default behavior
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (password !== confirmPassword) {
+                // Show the error message if passwords do not match
+                errorMessage.style.display = 'block';
+            } else {
+                // Hide the error message and redirect if passwords match
+                errorMessage.style.display = 'none';
+                window.location.href = 'nextPage.html';
+            }
+        });
+    </script>
+</body>
+</html>
